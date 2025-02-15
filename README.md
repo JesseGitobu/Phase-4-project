@@ -61,27 +61,22 @@ c) Determine which variables contribute most to accidents, such as reckless driv
 
 *   **Key Findings:**
     *   **Target Variable Distribution:** `DRIVER BEHAVIOR` and `OTHER/UNKNOWN` are the most frequent primary contributing causes.
-      ![CAUSES](https://github.com/user-attachments/assets/ba6b458f-f26d-48b6-9efb-e907c5073f79)
+      
 
     *   **Feature Distributions:** 
-       ![CRASH TYPE](https://github.com/user-attachments/assets/30aa8325-cefe-4442-9049-6d99b924571f)
-       ![WEATHER](https://github.com/user-attachments/assets/6d06c7a9-fea5-4890-aa7f-58a47f4cc5d4)
-       ![DEFECTS](https://github.com/user-attachments/assets/acabdd1e-8174-4309-afe9-1b90e1557235)
-      ![LIGHTING](https://github.com/user-attachments/assets/cacc2f8a-a108-435c-be5c-fe2c23604509)
-      ![ROAD SURFACE](https://github.com/user-attachments/assets/515fcb72-58bb-40ba-9283-1ea990db6249)
-      ![TRAFFIC WAY](https://github.com/user-attachments/assets/cb53fd67-a4b6-44a3-894b-0092f9331855)
-      ![DRIVER CAT](https://github.com/user-attachments/assets/22cbce49-dd25-435c-8b4a-37e1448e675d)
-      ![SEX](https://github.com/user-attachments/assets/213da377-c3ca-4360-a8f7-16561ef5481f)
-      ![TYPE](https://github.com/user-attachments/assets/eed94913-7b0b-493c-bd08-a52d0af19da2)
+       
 
 
 
 
     *   **Relationships between Features and Target Variable:**
-      [VEHICLE TYPE](https://github.com/user-attachments/assets/45f5ae6f-77fa-4e47-b88a-197589fa2ef2)
-      ![USE](https://github.com/user-attachments/assets/d45c181e-67db-4a67-ad3c-202bb01ba59c)
-      ![MANEUVER](https://github.com/user-attachments/assets/37e5a003-f275-4a5a-9b01-2a62dbad7f9d)
-      ![ACTION](https://github.com/user-attachments/assets/1c7dd45f-052d-4069-ae53-0d8b5c999671)
+     ![image](https://github.com/user-attachments/assets/a573fb8d-f3bd-4ec2-ae38-451d81267e7e)
+      ![image](https://github.com/user-attachments/assets/5589ee0b-c1fc-4f11-a013-7abf11102b8c)
+      ![image](https://github.com/user-attachments/assets/c48efb87-b994-4eec-87ce-0ea236583fcc)
+
+
+
+
 
 
 
@@ -125,7 +120,7 @@ c) Determine which variables contribute most to accidents, such as reckless driv
         *   Best Parameters: {'classifier\_\_n\_neighbors': 11, 'classifier\_\_p': 1, 'classifier\_\_weights': 'distance'}
     *   Gradient Boosting: Best F1 Score = 0.6025
         *   Best Parameters: {'classifier\_\_learning\_rate': 0.01, 'classifier\_\_max\_depth': 5, 'classifier\_\_n\_estimators': 200, 'classifier\_\_subsample': 0.8}
-*   **Test Set Results:** \
+*   **Test Set Results:** 
 Random Forest Test Set Performance:
 Classification Report:
                             precision    recall  f1-score   support
@@ -155,10 +150,118 @@ Confusion Matrix:
  [   23    95   171   452     6     6    91   217   132]
  [   14     8   228   302     2     6   184    20  2338]]
 
+KNN Test Set Performance:
+Classification Report:
+                            precision    recall  f1-score   support
+
+            ALCOHOL/DRUGS       0.20      0.00      0.00      1128
+              DISTRACTION       0.22      0.00      0.00      2745
+          DRIVER BEHAVIOR       0.58      0.69      0.63     92756
+            OTHER/UNKNOWN       0.55      0.52      0.53     79560
+          ROAD CONDITIONS       0.33      0.00      0.00       736
+                 SPEEDING       0.00      0.00      0.00       762
+TRAFFIC SIGNALS VIOLATION       0.50      0.17      0.25      8071
+           VEHICLE ISSUES       0.00      0.00      0.00      1193
+                  WEATHER       0.28      0.02      0.04      3102
+
+                 accuracy                           0.56    190053
+                macro avg       0.29      0.16      0.16    190053
+             weighted avg       0.54      0.56      0.54    190053
+
+Confusion Matrix:
+ [[    1     1   505   592     0     0    26     1     2]
+ [    0     2  1511  1207     0     0    20     0     5]
+ [    2     3 64398 27558     0     1   746     0    48]
+ [    2     1 37641 41296     2     0   537     4    77]
+ [    0     0   336   398     1     0     0     0     1]
+ [    0     1   424   319     0     0    10     0     8]
+ [    0     0  4482  2235     0     0  1348     0     6]
+ [    0     0   551   628     0     1    10     0     3]
+ [    0     1  1619  1399     0     0    25     0    58]]
+
+ Gradient Boosting Test Set Performance:
+Classification Report:
+                            precision    recall  f1-score   support
+
+            ALCOHOL/DRUGS       0.06      0.00      0.01      1128
+              DISTRACTION       0.68      0.08      0.14      2745
+          DRIVER BEHAVIOR       0.63      0.77      0.69     92756
+            OTHER/UNKNOWN       0.62      0.55      0.58     79560
+          ROAD CONDITIONS       0.34      0.11      0.17       736
+                 SPEEDING       0.22      0.05      0.08       762
+TRAFFIC SIGNALS VIOLATION       0.69      0.31      0.43      8071
+           VEHICLE ISSUES       0.54      0.16      0.25      1193
+                  WEATHER       0.32      0.09      0.14      3102
+
+                 accuracy                           0.62    190053
+                macro avg       0.46      0.24      0.28    190053
+             weighted avg       0.62      0.62      0.61    190053
+
+Confusion Matrix:
+ [[    5     5   434   635     3     2    39     1     4]
+ [    4   211  1327  1157     1     0    31     3    11]
+ [   22    36 71003 20766    22    46   566    42   253]
+ [   28    48 34518 43993   124    62   410    92   285]
+ [    1     0   172   469    83     1     2     3     5]
+ [    5     1   398   274     2    39    17     3    23]
+ [    1     4  3937  1631     5     4  2474     0    15]
+ [   14     1   417   552     1     2    10   192     4]
+ [    5     4  1326  1419     4    21    17    21   285]]
+
  
-    *   Gradient Boosting: \[Report metrics and discuss key findings, e.g., strengths, weaknesses, and misclassification patterns.]
-    *   Random Forest: \[Report metrics and discuss key findings.]
-    *   KNN: \[Report metrics and discuss key findings. If performance is very poor, state that the model is not suitable for the data.]
+ ![image](https://github.com/user-attachments/assets/7e34405d-72f7-48d6-aba1-74c5c303ad8e)
+
+   ## *   Gradient Boosting: 
+   ### **Strengths:**
+
+ Highest overall accuracy and weighted F1-score.
+
+* Reasonable performance on DRIVER BEHAVIOR and OTHER/UNKNOWN, which are the most frequent classes.
+
+### **Weaknesses:**
+
+ * Extremely poor performance on minority classes (ALCOHOL/DRUGS, ROAD CONDITIONS, SPEEDING, WEATHER, VEHICLE ISSUES, DISTRACTION). The precision and recall values are very low, indicating that the model is not able to identify these causes effectively.
+
+* The confusion matrix shows that the model often misclassifies these minority classes as DRIVER BEHAVIOR or OTHER/UNKNOWN.
+
+### **Interpretation and Recommendations:**
+
+ * Gradient Boosting is the best-performing model, but it's still struggling with the class imbalance. Focus on improving its performance on the minority classes.
+
+    *   Random Forest: 
+### **Strengths:**
+
+* High recall for WEATHER and TRAFFIC SIGNALS VIOLATION, meaning it captures a good proportion of these events.
+
+### **Weaknesses:**
+
+ * Extremely low precision for almost all classes. This means that many of the accidents it predicts as having a certain cause are actually due to something else.
+
+ * The high recall combined with low precision suggests that the model is overgeneralizing and assigning a lot of accidents to these classes, even when they are not the true cause.
+
+ * Lower F1-score, indicating that it's generally a poor model for this dataset.
+
+### **Interpretation and Recommendations:**
+
+#### * Random Forest is not performing well and is likely overfitting or not capturing the underlying patterns.    
+    
+   ## *   KNN:
+### **Strengths:**
+
+* None of significance based on the data.
+
+### **Weaknesses:**
+
+ * Extremely poor performance across the board, especially for minority classes.
+
+ * Very low recall values, indicating that it's not able to identify the causes of accidents effectively.
+
+ * High computation, especially for prediction with no comparable performance to other models.
+
+### **Interpretation and Recommendations:**
+
+* KNN is not suitable for this dataset. It's likely being overwhelmed by the high dimensionality and the large number of instances.
+
 *   **Model Comparison:** Gradient Boosting outperformed Random Forest and KNN on the test set.
 
 ## Recommendations
