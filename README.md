@@ -61,13 +61,34 @@ c) Determine which variables contribute most to accidents, such as reckless driv
 
 *   **Key Findings:**
     *   **Target Variable Distribution:** `DRIVER BEHAVIOR` and `OTHER/UNKNOWN` are the most frequent primary contributing causes.
-    *   **Feature Distributions:** [Summarize the distributions of key features and highlight any interesting patterns or anomalies.]
-    *   **Relationships between Features and Target Variable:** [Describe the relationships between key features and the `PRIM_CONTRIBUTORY_CAUSE`. Use specific examples, e.g., "Accidents involving `VEHICLE_TYPE_MOTORCYCLE` are more likely to be attributed to `DRIVER BEHAVIOR`."]
-    *   **Missing Value Analysis:** [Describe the extent of missing values in each column and how they were handled.]
+      ![CAUSES](https://github.com/user-attachments/assets/ba6b458f-f26d-48b6-9efb-e907c5073f79)
 
-*   **Visualizations:** [Include key visualizations generated during EDA, such as bar plots of categorical feature distributions, box plots of numerical features vs. target variable, and correlation heatmaps.  You can link to the images here if they are stored separately.]
+    *   **Feature Distributions:** 
+       ![CRASH TYPE](https://github.com/user-attachments/assets/30aa8325-cefe-4442-9049-6d99b924571f)
+       ![WEATHER](https://github.com/user-attachments/assets/6d06c7a9-fea5-4890-aa7f-58a47f4cc5d4)
+       ![DEFECTS](https://github.com/user-attachments/assets/acabdd1e-8174-4309-afe9-1b90e1557235)
+      ![LIGHTING](https://github.com/user-attachments/assets/cacc2f8a-a108-435c-be5c-fe2c23604509)
+      ![ROAD SURFACE](https://github.com/user-attachments/assets/515fcb72-58bb-40ba-9283-1ea990db6249)
+      ![TRAFFIC WAY](https://github.com/user-attachments/assets/cb53fd67-a4b6-44a3-894b-0092f9331855)
+      ![DRIVER CAT](https://github.com/user-attachments/assets/22cbce49-dd25-435c-8b4a-37e1448e675d)
+      ![SEX](https://github.com/user-attachments/assets/213da377-c3ca-4360-a8f7-16561ef5481f)
+      ![TYPE](https://github.com/user-attachments/assets/eed94913-7b0b-493c-bd08-a52d0af19da2)
 
-## 5. Modeling
+
+
+
+    *   **Relationships between Features and Target Variable:**
+      [VEHICLE TYPE](https://github.com/user-attachments/assets/45f5ae6f-77fa-4e47-b88a-197589fa2ef2)
+      ![USE](https://github.com/user-attachments/assets/d45c181e-67db-4a67-ad3c-202bb01ba59c)
+      ![MANEUVER](https://github.com/user-attachments/assets/37e5a003-f275-4a5a-9b01-2a62dbad7f9d)
+      ![ACTION](https://github.com/user-attachments/assets/1c7dd45f-052d-4069-ae53-0d8b5c999671)
+
+
+
+
+    
+
+## Modeling
 
 *   **Data Preprocessing:**
     *   **Handling Missing Values:** Imputed missing numerical values using the median and missing categorical values using the most frequent value.
@@ -89,7 +110,7 @@ c) Determine which variables contribute most to accidents, such as reckless driv
 *   **Model Training:**
     *   Trained each model on the training set using the best hyperparameters found by GridSearchCV.
 
-## 6. Evaluation
+## Evaluation
 
 *   **Evaluation Metrics:**
     *   Accuracy (Overall performance)
@@ -104,13 +125,43 @@ c) Determine which variables contribute most to accidents, such as reckless driv
         *   Best Parameters: {'classifier\_\_n\_neighbors': 11, 'classifier\_\_p': 1, 'classifier\_\_weights': 'distance'}
     *   Gradient Boosting: Best F1 Score = 0.6025
         *   Best Parameters: {'classifier\_\_learning\_rate': 0.01, 'classifier\_\_max\_depth': 5, 'classifier\_\_n\_estimators': 200, 'classifier\_\_subsample': 0.8}
-*   **Test Set Results:** \[Paste the classification reports and/or confusion matrices for each model here.]
+*   **Test Set Results:** \
+Random Forest Test Set Performance:
+Classification Report:
+                            precision    recall  f1-score   support
+
+            ALCOHOL/DRUGS       0.07      0.09      0.08      1128
+              DISTRACTION       0.04      0.22      0.07      2745
+          DRIVER BEHAVIOR       0.72      0.49      0.58     92756
+            OTHER/UNKNOWN       0.61      0.48      0.54     79560
+          ROAD CONDITIONS       0.28      0.35      0.31       736
+                 SPEEDING       0.06      0.03      0.04       762
+TRAFFIC SIGNALS VIOLATION       0.23      0.78      0.36      8071
+           VEHICLE ISSUES       0.19      0.18      0.19      1193
+                  WEATHER       0.12      0.75      0.21      3102
+
+                 accuracy                           0.49    190053
+                macro avg       0.26      0.38      0.26    190053
+             weighted avg       0.62      0.49      0.53    190053
+
+Confusion Matrix:
+ [[  101    70   214   443     3     9   101    69   118]
+ [   66   597   565  1012    10     3   181    66   245]
+ [  368  6762 45079 21296   178   181 11022   176  7694]
+ [  759  6955 15079 38407   466   175  9167   574  7978]
+ [    2    19    87   276   260     1    27     6    58]
+ [   23    37   160   226     1    25    80     3   207]
+ [   14    74   792   565     4     6  6282     4   330]
+ [   23    95   171   452     6     6    91   217   132]
+ [   14     8   228   302     2     6   184    20  2338]]
+
+ 
     *   Gradient Boosting: \[Report metrics and discuss key findings, e.g., strengths, weaknesses, and misclassification patterns.]
     *   Random Forest: \[Report metrics and discuss key findings.]
     *   KNN: \[Report metrics and discuss key findings. If performance is very poor, state that the model is not suitable for the data.]
 *   **Model Comparison:** Gradient Boosting outperformed Random Forest and KNN on the test set.
 
-## 7. Recommendations
+## Recommendations
 
 *   **Based on the Model Results, we recommend the following to the City of Chicago and the Vehicle Safety Board:**
     1.  **Focus on driver education and awareness campaigns to address improper driving behaviors (targeting `DRIVER BEHAVIOR`):** 
@@ -119,7 +170,7 @@ c) Determine which variables contribute most to accidents, such as reckless driv
     4.  **Improve road maintenance during adverse weather conditions (addressing `ROAD CONDITIONS` and `WEATHER`):** 
     5.  **Enhance data collection:** Integrate more features.
 
-## 8. Future Work
+## Future Work
 
 *   **Address Class Imbalance More Aggressively:** Experiment with oversampling and undersampling techniques, as well as cost-sensitive learning.
 *   **Feature Engineering:** Explore new features based on domain knowledge and interactions between existing features.
