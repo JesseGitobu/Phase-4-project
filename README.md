@@ -61,20 +61,31 @@ c) Determine which variables contribute most to accidents, such as reckless driv
 
 *   **Key Findings:**
     *   **Target Variable Distribution:** `DRIVER BEHAVIOR` and `OTHER/UNKNOWN` are the most frequent primary contributing causes.
-      
+      ![image](https://github.com/user-attachments/assets/7c124a85-1e4d-4db6-b622-1b5f9f98b815)
+
 
     *   **Feature Distributions:** 
-       
+       ![image](https://github.com/user-attachments/assets/74027dbb-8d28-41ec-af2f-dcb8e6993580)
+        ![image](https://github.com/user-attachments/assets/50ca20c7-bce8-43ae-93b9-b060a84c51a8)
+         ![image](https://github.com/user-attachments/assets/8a0d5a6d-9bec-4f47-9816-c19c46ff44f7)
+        ![image](https://github.com/user-attachments/assets/fa80c057-7b79-402c-81fd-305a16f30fd3)
+        ![image](https://github.com/user-attachments/assets/170a60ca-392a-4425-95e6-8b6dea5627dc)
+        ![image](https://github.com/user-attachments/assets/9db82eaa-d8a6-4090-95d6-f056d0a79ffa)
+
+
 
 
 
 
     *   **Relationships between Features and Target Variable:**
-     ![image](https://github.com/user-attachments/assets/a573fb8d-f3bd-4ec2-ae38-451d81267e7e)
-      ![image](https://github.com/user-attachments/assets/5589ee0b-c1fc-4f11-a013-7abf11102b8c)
-      ![image](https://github.com/user-attachments/assets/c48efb87-b994-4eec-87ce-0ea236583fcc)
-
-
+      ![image](https://github.com/user-attachments/assets/9dd921f2-f871-4413-bd41-d6b25d0f6218)
+      ![image](https://github.com/user-attachments/assets/f48fd42a-b07f-48c0-9d2a-349810293f72)
+      ![image](https://github.com/user-attachments/assets/fdd75d5d-82e6-4855-bdcd-ef27237346b4)
+      ![image](https://github.com/user-attachments/assets/bd73cdfd-0fe9-45e8-8328-a022ec88e041)
+      ![image](https://github.com/user-attachments/assets/ddabe1ee-ab5d-49b8-8962-b9bc2c9ac78a)
+      ![image](https://github.com/user-attachments/assets/52fd01e8-78c9-4cb0-83d1-451abd608ea5)
+      ![image](https://github.com/user-attachments/assets/54eff072-10da-4c72-8f55-e6502a42b22d)
+      ![image](https://github.com/user-attachments/assets/d3158321-6095-4023-b2f5-c9a71a569ac4)
 
 
 
