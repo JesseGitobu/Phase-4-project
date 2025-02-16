@@ -239,7 +239,7 @@ Confusion Matrix:
 
  * Gradient Boosting is the best-performing model, but it's still struggling with the class imbalance. Focus on improving its performance on the minority classes.
 
-    *   Random Forest: 
+## Random Forest: 
 ### **Strengths:**
 
 * High recall for WEATHER and TRAFFIC SIGNALS VIOLATION, meaning it captures a good proportion of these events.
